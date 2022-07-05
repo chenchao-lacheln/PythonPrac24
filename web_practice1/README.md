@@ -95,12 +95,25 @@
 
 ![img_21.png](img_21.png)
 
+    https://registry.npmmirror.com/binary.html?path=chromedriver/
+
+
 ![img_23.png](img_23.png)
 
 ![img_22.png](img_22.png)
 
 ![img_24.png](img_24.png)
 
+![img_25.png](img_25.png)
 
+### geckodriver配置-Mac
+
+![img_26.png](img_26.png)
+
+## 在python中使用
+
+# FAQ
+
+chromedriver 驱动必须放在 /usr/local/bin 这个路径才会生效
 
 
