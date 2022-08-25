@@ -6,12 +6,11 @@
 # 导入selenium包
 from selenium import webdriver
 
-chrome_driver = "/usr/local/bin/chromedriver.exe"
 # 创建一个Chromedriver实例，Chrome()会从环境变量中寻找浏览器驱动
 driver = webdriver.Chrome()
 # 打开网址
 driver.get("https://www.baidu.com/")
 # 关闭driver
-driver.quit()
+# driver.quit()
 
 
