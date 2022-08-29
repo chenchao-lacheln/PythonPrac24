@@ -4,6 +4,7 @@
 # @Author  : Lacheln
 import requests
 from hamcrest import *
+from jsonpath import jsonpath
 
 
 class TestDemo:
@@ -53,6 +54,7 @@ class TestDemo:
         r = requests.post('https://httpbin.testing-studio.com/post', json=payload)
         print(r.text)
         assert r.status_code == 200
+        #json断言
         assert r.json()['json']['level'] == 1
 
     # harmcrest 断言
@@ -65,4 +67,16 @@ class TestDemo:
         print(r.text)
         assert r.status_code == 200
         assert_that( r.json()['json']['level'], equal_to(1))
+
+    # json断言
+    def test_hotgwares_json(self):
+        r = requests.get('https://ceshiren.com/categories.json')
+        print(r.text)
+        assert r.status_code == 200
+        # json断言
+        assert r.json()["category_list"]["categories"][0]["name"] == "提问区"
+        # jsonpath 断言
+        print(jsonpath(r.json(),'$..name'))
+        assert jsonpath(r.json(),'$..name')[0] == '提问区'
+
 
