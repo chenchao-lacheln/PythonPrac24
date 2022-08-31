@@ -1,0 +1,102 @@
+2022-08-31 17:29:20,170 - simple_example - DEBUG - 获取上架商品接口的响应信息为{
+  "errno": 0,
+  "errmsg": "成功"
+}
+2022-08-31 17:29:20,422 - simple_example - DEBUG - 获取商品列表接口的响应信息为{
+  "errno": 0,
+  "data": {
+    "total": 1,
+    "pages": 1,
+    "limit": 10,
+    "page": 1,
+    "list": [
+      {
+        "id": 1182042,
+        "goodsSn": "9001",
+        "name": "ADG002",
+        "categoryId": 0,
+        "brandId": 0,
+        "gallery": [],
+        "keywords": "",
+        "brief": "",
+        "isOnSale": true,
+        "sortOrder": 100,
+        "picUrl": "",
+        "isNew": true,
+        "isHot": false,
+        "unit": "’件‘",
+        "counterPrice": 0.0,
+        "retailPrice": 99.0,
+        "addTime": "2022-08-31 09:29:13",
+        "updateTime": "2022-08-31 09:29:13",
+        "deleted": false
+      }
+    ]
+  },
+  "errmsg": "成功"
+}
+2022-08-31 17:29:20,664 - simple_example - DEBUG - 获取商品详情接口的响应信息为{
+  "errno": 0,
+  "data": {
+    "categoryIds": [],
+    "goods": {
+      "id": 1182042,
+      "goodsSn": "9001",
+      "name": "ADG002",
+      "categoryId": 0,
+      "brandId": 0,
+      "gallery": [],
+      "keywords": "",
+      "brief": "",
+      "isOnSale": true,
+      "sortOrder": 100,
+      "picUrl": "",
+      "isNew": true,
+      "isHot": false,
+      "unit": "’件‘",
+      "counterPrice": 0.0,
+      "retailPrice": 99.0,
+      "addTime": "2022-08-31 09:29:13",
+      "updateTime": "2022-08-31 09:29:13",
+      "deleted": false
+    },
+    "attributes": [],
+    "specifications": [
+      {
+        "id": 1288,
+        "goodsId": 1182042,
+        "specification": "规格",
+        "value": "标准",
+        "picUrl": "",
+        "addTime": "2022-08-31 09:29:13",
+        "updateTime": "2022-08-31 09:29:13",
+        "deleted": false
+      }
+    ],
+    "products": [
+      {
+        "id": 1289,
+        "goodsId": 1182042,
+        "specifications": [
+          "标准"
+        ],
+        "price": 99.0,
+        "number": 99,
+        "url": "",
+        "addTime": "2022-08-31 09:29:13",
+        "updateTime": "2022-08-31 09:29:13",
+        "deleted": false
+      }
+    ]
+  },
+  "errmsg": "成功"
+}
+2022-08-31 17:29:20,937 - simple_example - INFO - 添加购物车接口的响应信息为{
+  "errno": 0,
+  "data": 56,
+  "errmsg": "成功"
+}
+2022-08-31 17:29:21,184 - simple_example - DEBUG - 删除商品的响应信息为{
+  "errno": 0,
+  "errmsg": "成功"
+}

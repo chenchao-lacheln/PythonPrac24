@@ -27,6 +27,7 @@ class TestLitemall:
         r = requests.post(url,json=client_data)
         self.client_token = r.json()["data"]["token"]
 
+    # 推荐使用delete接口，进行数据清理
     def teardown(self):
         url = "https://litemall.hogwarts.ceshiren.com/admin/goods/delete"
         header = {"X-Litemall-Admin-Token": self.token}
