@@ -27,6 +27,12 @@ class TestLitemall:
         r = requests.post(url,json=client_data)
         self.client_token = r.json()["data"]["token"]
 
+    def teardown(self):
+        url = "https://litemall.hogwarts.ceshiren.com/admin/goods/delete"
+        header = {"X-Litemall-Admin-Token": self.token}
+        r = requests.post(url,json={"id":self.goods_id},headers = header)
+        logger.debug(f"删除商品的响应信息为{json.dumps(r.json(), indent=2, ensure_ascii=False)}")
+
     # 上架商品接口调试
     # 问题4：goods_name 不能重复，所以需要添加参数化
     @pytest.mark.parametrize("goods_name",["ADG002","ADG003"])
@@ -58,18 +64,18 @@ class TestLitemall:
             "sort": "add_time"
         }
         r = requests.get(goods_list_url,params=goods_list_data,headers = header)
-        goods_id = r.json()["data"]["list"][0]["id"]
+        self.goods_id = r.json()["data"]["list"][0]["id"]
         logger.debug(f"获取商品列表接口的响应信息为{json.dumps(r.json(), indent=2, ensure_ascii=False)}")
 
     # 5.获取商品详情接口（提取商品库存ID）
         goods_detail_url = "https://litemall.hogwarts.ceshiren.com/admin/goods/detail"
-        r = requests.get(goods_detail_url,params={"id":goods_id},headers = header)
+        r = requests.get(goods_detail_url,params={"id":self.goods_id},headers = header)
         product_id = r.json()["data"]["products"][0]["id"]
         logger.debug(f"获取商品详情接口的响应信息为{json.dumps(r.json(), indent=2, ensure_ascii=False)}")
 
     # 6.添加购物车
     # def test_add_cart(self):
-        cart_data = {"goodsId":goods_id,"number":1,"productId":product_id}
+        cart_data = {"goodsId":self.goods_id,"number":1,"productId":product_id}
         url = "https://litemall.hogwarts.ceshiren.com/wx/cart/add"
         # 问题2 ： goodsId 和 productId 是写死的，变量的传递没有完成
         # 解决方案 ： goodsId 和 productId 从其他接口获取，并传递给添加购物车接口
