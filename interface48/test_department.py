@@ -37,9 +37,10 @@ class TestDepartment:
             "name_en": "RDGZ",
             "parentid": 1,
             "order": 1,
-            "id": 4
+            "id": 5
         }
         r = requests.post(url=url, params=param, json=data,)
         print(r.json())
+        print(r.status_code)
         # 断言 errcode 是否为0
         assert 0 == r.json()["errcode"]
