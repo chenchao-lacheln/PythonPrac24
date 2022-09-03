@@ -11,9 +11,4 @@ driver = webdriver.Chrome()
 # 打开网址
 driver.get("https://www.baidu.com/")
 # 关闭driver
-driver.quit()
-
-
-
-
-
+# driver.quit()
