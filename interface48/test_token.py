@@ -4,6 +4,7 @@
 # @Author  : Lacheln
 import requests
 
+
 class TestToken:
     # 获取token的第一种方式
     def test_get_token1(self):
@@ -22,8 +23,8 @@ class TestToken:
         url = f"https://qyapi.weixin.qq.com/cgi-bin/gettoken"
         # 定义get请求的参数（字典）-->> 拼接到URL后边的参数
         param = {
-            "corpid" : corpid,
-            "corpsecret" : contact_secret
+            "corpid": corpid,
+            "corpsecret": contact_secret
         }
         r = requests.get(url=url, params=param)
         print(r.json())
