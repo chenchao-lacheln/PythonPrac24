@@ -41,3 +41,5 @@ class TestDepartment:
         }
         r = requests.post(url=url, params=param, json=data,)
         print(r.json())
+        # 断言 errcode 是否为0
+        assert 0 == r.json()["errcode"]
