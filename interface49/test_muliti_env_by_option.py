@@ -12,17 +12,15 @@ import yaml
 # 设置临时环境变量
 # windows set interface_env=test
 # macOS export interface_env=test
-class TestMulitiEnv:
+from interface49.conftest import global_env
+
+
+class TestMulitiEnvByOption:
     def setup_class(self):
-        # 目的 ： 在接口用例中，只指定path，不指定URL
-        # 从yaml文件读取数据
-        # 第一种方式：从环境变量读取名称为 interface_env 的配置环境
-        path_env = os.getenv("interface_env",default=test)
+        path_env = global_env.get("env")
         # 读取对应的文件内容
         env = yaml.safe_load(open(f"{path_env}.yaml",encoding="utf-8"))
         self.base_url = env["base_url"]
-        # self.base_url = "https://httpbin.ceshiren.com/"
-
 
     # 编写2条测试用例
     def test_devenv(self):
