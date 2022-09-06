@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2022/9/5 4:39 下午
 # @Author  : Lacheln
-from interface49 import test_requests1
+from interface49.base64 import test_requests1
 
 
 # 测试 封装的加密算法

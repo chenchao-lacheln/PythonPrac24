@@ -4,7 +4,6 @@
 # @Author  : Lacheln
 
 '''多套被测环境切换'''
-import os
 
 import requests
 import yaml
@@ -12,7 +11,7 @@ import yaml
 # 设置临时环境变量
 # windows set interface_env=test
 # macOS export interface_env=test
-from interface49.conftest import global_env
+from interface49.muliti_env_manage.conftest import global_env
 
 
 class TestMulitiEnvByOption:
