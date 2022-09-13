@@ -4,4 +4,5 @@
 # @Author  : Lacheln
 
 class Cart:
-    pass
+    def add(self):
+        pass
